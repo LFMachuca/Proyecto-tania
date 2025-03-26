@@ -5,16 +5,24 @@
     margin: 0;
 }
 :root{
-    --color-1:#7d9881;
-    --color-2:#8d644e;
-    --color-3:#fff;
+    --color-bg-body:#D7DEE7;
+    --bg-seccion-1:#A7B2C3;
+    --bg-seccion-2:#E3C7BF;
+    --bg-color-3:#A7B2C3;
+
+    --color-text-1:#FFFFFF;
+    --color-text-2:#5A5A5A;
+
+    --color-btn-1:#E3C7BF;
+    --color-btn-2:#D1B0A8;
 
     --title-font:'Playfair Display' san-serif;
     --paragraph-font:'Lato' san-serif;
 }
 
 body{
-    background-color: var(--color-3);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-2);
 }
 
 p,a{
@@ -32,28 +40,77 @@ h1,h2,h3,h4,h5,h6{
 .test{
     border: 1px solid;
 }
-
+.navbar{
+    background-color: #76879A ;
+}
 .hero {
-    background: url('https://picsum.photos/seed/picsum/1500/700') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--color-text-1);
     text-align: center;
     margin-top: 56px; /* Ajuste por navbar fixed */
+    position: relative;
 }
-.hero h1 { font-size: 3rem; }
+.hero::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(167, 178, 195, 0.5),rgba(167, 178, 195, 0.5)), url('https://picsum.photos/seed/picsum/1500/700');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.hero h1 { 
+    font-size: 3rem;
+ }
+ .hero .hero-btn{
+    background-color:var(--color-btn-1) ;
+    color: var(--color-text-2);
+    transition: .3s ease;
+ }
+ .hero .hero-btn:hover{
+    background-color: var(--color-btn-2);
+ }
+
+.sobre-nosotros{
+    background-color: var(--bg-seccion-2);
+}
+
+.testimonios{
+    background-color: var(--bg-seccion-2);
+}
+
+.sobre-mi{
+    background-color: var(--bg-seccion-2);
+}
+
 .gallery{
     gap: 20px;
 }
 .gallery img { width: 100%; border-radius: 10px; }
+
 .testimonio-card {
-     border-left: 5px solid #0d6efd;
-    height: 100%;
+     border-left: 5px solid #A7B2C3;
+     height: 100%;
     }
-.sobre-mi img { width: 100%; border-radius: 10px; }
+
+.testimonio-card p{
+    font-size: 1.2em;
+}
+.sobre-mi img { 
+    width: 100%; 
+    border-radius: 10px;
+ }
 
 .card{
     height: 100%;
+}
+footer{
+    background-color: #76879A;
 }
